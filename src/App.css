@@ -2,12 +2,15 @@ body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background-image: url("assets/fuel.png");
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position: center;
   background-color: #cccccc;
+  background-attachment: fixed;
 }
 
 .app-container {
   display: flex;
+  flex-direction: row;
   height: 100vh;
   overflow: hidden;
   font-family: 'Segoe UI', sans-serif;
@@ -22,7 +25,6 @@ body {
   transition: transform 1s ease-in-out;
   box-sizing: border-box;
   overflow-y: auto;
-
 }
 
 .slide-left {
@@ -51,7 +53,6 @@ body {
 .form-container {
   max-width: 400px;
   width: 90%;
-  height: 100%;
   background: #ffa078;
   padding: 40px;
   border-radius: 25px;
@@ -68,12 +69,12 @@ label {
 }
 
 input, select {
-  width: 90%;
-  padding: 5px;
+  width: 100%;
+  padding: 10px;
   border-radius: 20px;
   border: 2px solid #000000;
-  margin-bottom: 7px;
-  font-size: 13px;
+  margin-bottom: 10px;
+  font-size: 1rem;
 }
 
 .switch {
@@ -94,7 +95,7 @@ input, select {
 
 .switch button.active {
   background: #ff7d2c;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   border-color: #000000;
 }
 
@@ -102,33 +103,35 @@ input, select {
   width: 100%;
   padding: 12px;
   background: #ff7d2c;
-  color: rgb(0, 0, 0);
+  color: #000000;
   font-weight: bold;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s;
+  font-size: 1rem;
 }
 
 .calculate-btn:hover {
   background: #010101;
-  color:#ffffff;
+  color: #ffffff;
 }
 
 .result-box {
   background: #fae3bd;
-  padding: 4px;
-  margin: 0 20px;
+  padding: 20px;
+  margin: 20px auto;
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(0,0,0,1);
   max-width: 400px;
+  width: 90%;
   text-align: left;
 }
+
 .result-box h2 {
   margin-bottom: 16px;
   color: #ff8400;
 }
-
 
 input[type=range] {
   width: 100%;
@@ -141,6 +144,7 @@ input[type=range] {
   text-align: center;
   margin-bottom: 20px;
 }
+
 .company-video {
   width: 400px;
   height: 100px;
@@ -155,4 +159,42 @@ input[type=range] {
   color: #5b6565;
   padding-top: 30px;
   padding-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .panel {
+    padding: 30px 20px;
+    animation: none;
+  }
+
+  .form-container,
+  .result-box {
+    width: 100%;
+    max-width: 90%;
+    margin: 20px auto;
+  }
+
+  .company-video {
+    width: 100%;
+    height: auto;
+  }
+
+  .calculate-btn {
+    font-size: 1.1rem;
+    padding: 15px;
+  }
+
+  .switch button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  input, select {
+    font-size: 1rem;
+  }
 }
